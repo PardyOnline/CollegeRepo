@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="main.css">
+  <script defer src="login.js"></script>
+  <title>ROCK, PAPER, SCISSORS!</title>
+</head>
+<ul>
+  <li><a href="Sign In.html">Sign In</a></li>
+  <li><a href="Sign Up.html">Sign Up</a></li>
+</ul>
+
+<body>
+
+  <h1>Sign In!</h1>
+  <p>Welcome back! Log in and try and beat the computer!</p>
+
+  <!-- Error handler for incorrect details -->
+  <div id="errormsg">
+    <p id="error">Username not correct! <span id="errormsgPlus"> and/or password</span></p>
+  </div> 
+
+  <!-- Form to take users details-->
+  <form id="form" method="get">
+
+    <!--User details-->
+    <label for="username"><b>Username</b></label>
+    <input type="text" placeholder="Username" name="username" class ="signin_details" required>
+    	
+    <br>
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" class ="signin_details" required>
+        
+    <br>
+    <button type="submit" id="logBtn" class ="signin_details" value="Login">Login</button>
+    <br>
+
+    <p>Don't have an account? Navigate to the <a href="Sign Up.html">Sign up</a> page!</p>
+  </form>
+
+
+<!--Footer and copyright-->
+  <footer>
+    <small class="copyright">Copyright &copy; Sean Pardy. Icons from https://icons8.com/</small>
+  
+    </footer>
+</html>

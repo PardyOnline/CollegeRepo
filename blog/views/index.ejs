@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <div class="Search-bar">
+    <form action="/search/:name" method="post">
+      <input type="text" placeholder="Find a Blog Here.." name="name" >
+      <button type='search'>Search</button>
+    </form>
+  </div>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+
+  <% include partials/nav.ejs %>
+    <h2>
+      <%= title %>
+    </h2>
+    <div class="ra-r"></div>
+
+    <body>
+
+      <div style="margin:0 auto ; width:50%; padding:20px">
+        <form action="/create" method="post">
+          <label>Blog Name</label>
+          <input type="text" name="name">
+          <br /> <br /> <br /> <br />
+          <label>Blog Description</label>
+          <input id="description" name="description" rows="4" cols="50">
+        </input>
+          <br /> <br /> <br /> <br />
+          <label>Blog Date</label>
+          <input type="date" name="date">
+          <br /> <br /> <br /> <br />
+          <button>Submit</button>
+        </form>
+      </div>
+
+      </div>
+    </body>
+    <footer>
+      <% include partials/foot.ejs %>
+    </footer>
+</html>

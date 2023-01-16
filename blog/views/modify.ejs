@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<div class="Search-bar">
+    <form action="action_page.php">
+        <input type="text" placeholder="Find a Blog Here.." name="search">
+        <button type="submit">Search</button>
+    </form>
+</div>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <% include partials/nav.ejs %>
+        <h2>
+            <%= title %>
+        </h2>
+        <div class="ra-r"></div>
+        <label>Here you will be able to modify an existing entry/entries in the database.</label>
+
+        <div style="margin:0 auto ; width:50%; padding:20px">
+            <form action="/modify/<%= bloglist._id %>" method="post">
+                <label>Blog Name</label>
+                <input type="text" name="name" value="<%= bloglist.name %>">
+                <br><br><br><br>
+                <label>Blog Description</label>
+                <input type="text" id="description" name="description" rows="4" cols="50" value="<%= bloglist.description %>">
+            </input>
+                <br /> <br /> <br /> <br />
+                <label>Blog Date</label>
+                <input type="date" name="date" value="<%= bloglist.date %>">
+                <br /> <br /> <br /> <br />
+                <button>Submit</button>
+            </form>
+        </div>
+</body>
+
+<footer>
+    <% include partials/foot.ejs %>
+</footer>
+
+</html>

@@ -1,0 +1,165 @@
+body {
+  padding: 10px;
+  background-color:#3d59ab  ;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #000080;
+
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+li a:hover:not(.active) {
+  background-color:#c83200;
+}
+
+.active {
+  background-color: #4682B4;
+  color: white;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+div{
+  text-align: center;
+}
+
+label {
+  color: white;
+  background: #000080;
+  border-radius: 2px 2px 2px 2px;
+  box-shadow: 0 0 0 1px black, 1px 1px 6px 1px rgba(10, 10, 0, 0.5);
+  Font-family: "Microsoft YaHei", "Tahoma", "boldface", Arial;
+  font-size: 15px;
+  font-weight: bold;
+  height: 24px;
+  line-height: 23px;
+  text-shadow: 2px 2px 3px black;
+}
+
+th, td {
+  color: black;
+  background: darkgrey;
+  border-radius: 2px 2px 2px 2px;
+  box-shadow: 0 0 0 1px black, 1px 1px 6px 1px rgba(10, 10, 0, 0.5);
+  Font-family: "Microsoft YaHei", "Tahoma", "boldface", Arial;
+  font-size: 15px;
+  font-weight: bold;
+  height: 24px;
+  line-height: 23px;
+  text-shadow: 2px 2px 3px white;
+  border-style: outset;
+}
+
+
+h2 {
+  background: #214bca;
+    border-radius: 2px 2px 2px 2px;
+    box-shadow: 0 0 0 1px #000080, 1px 1px 6px 1px rgba(10, 10, 0, 0.5);
+    color: black;
+    Font-family: "Microsoft YaHei", "Tahoma", "boldface", Arial;
+    font-size: 20px;
+    font-weight: bold;
+    height: 24px;
+    line-height: 23px;
+    margin: 12px 0 !important;
+    padding: 5px 0 5px 10px;
+    text-shadow: 2px 2px 3px #FFFF;
+    text-align: center;
+}
+
+.footer {
+  position:fixed;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  color: white;
+  text-align: right;
+  opacity: 25%;
+  float: right;
+}
+
+p {
+  opacity: 50%;
+}
+
+#logo {
+  float: left;
+}
+
+.wrapper {
+  text-align: center;
+}
+
+.Search-bar {
+  align-self: center;
+  padding-bottom: 12px;
+}
+
+.Search-bar button{
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #000080;
+  color: white;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.Search-bar input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+button {
+  background: #000080;
+  border-radius: 8px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin: 4px 2px;
+  font-family:monospace;
+  font-weight: bolder;
+  font-size: 12px;
+}
+
+a {
+  color: white;
+}

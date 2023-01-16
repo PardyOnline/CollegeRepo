@@ -1,0 +1,59 @@
+<div class="Search-bar">
+  <form action="/search/:name" method="post">
+    <input type="text" placeholder="Find a Blog Here.." name="name" >
+    <button type='search'>Search</button>
+  </form>
+</div>
+
+<title>
+  <%= title %>
+</title>
+<div class="wrapper">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <% include partials/nav.ejs %>
+    <h2>
+      <%= title %>
+    </h2>
+    
+    <body>
+      <table class="table table-inverse">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Date</th>
+            <th>Options</th>
+
+          </tr>
+        </thead>
+
+        <tbody>
+          <% if(bloglist.length> 0) { %>
+            <% for(var i=0; i < bloglist.length; i++) { %>
+              <tr>
+
+                <td>
+                  <%= bloglist[i].name %>
+                </td>
+                <td>
+                  <%= bloglist[i].description %>
+                </td>
+                <td>
+                  <%= bloglist[i].date %>
+                </td>
+                <td>
+                  <button><a href='/delete/<%= bloglist[i]._id %>'>Delete </a></button>
+                  <button><a href='/modify/<%= bloglist[i]._id %>'>Modify </a></button>
+                </td>
+
+
+              </tr>
+              <% } %>
+                <% } %>
+        </tbody>
+
+      </table>
+
+    </body>
+    
+</div>

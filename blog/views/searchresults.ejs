@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<% include partials/nav.ejs %>
+    <h2>
+      <%= title %>
+    </h2>
+    
+    <body>
+      <table class="table table-inverse">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Date</th>
+            <th>Options</th>
+
+          </tr>
+        </thead>
+
+        <tbody>
+            <% for(var i=0; i < bloglist.length; i++) { %>
+              <tr>
+
+                <td>
+                  <%= bloglist[i].name %>
+                </td>
+                <td>
+                  <%= bloglist[i].description %>
+                </td>
+                <td>
+                  <%= bloglist[i].date %>
+                </td>
+
+
+              </tr>
+                <% } %>
+        </tbody>
+
+      </table>
+
+    </body>
+    
+</div>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <div class="Search-bar">
+    <form action="action_page.php">
+      <input type="text" placeholder="Find a Blog Here.." name="search" >
+      <button type="submit">Search</button>
+    </form>
+  </div>
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+
+  <% include partials/nav.ejs %>
+
+
+    <h2>
+      <%= title %>
+    </h2>
+    <label>My name is Sean Pardy and I am a student in MTU. I am currently repeating second year and these are my blogs
+      posts. <br>If you would like to get in contact with me my student email address is sean.pardy@mycit.ie. <br> Thank
+      you for reading my blogs
+
+    </label>
+</body>
+<footer>
+  <% include partials/foot.ejs %>
+</footer>
+
+</html>

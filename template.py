@@ -125,5 +125,5 @@ def Task3():
 
     # changing centuries to not have the s
     flt['age'] = flt['age'].str.replace(r's', '')
-    flt['age'] = flt['age'].apply(pd.to_numeric, errors='coerce')
+    flt['age'] = flt['age'].apply(pd.to_numeric, errors='coerce') 
 

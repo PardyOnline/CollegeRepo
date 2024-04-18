@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Homepage</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="/styles.css">
+    <script src="/scripts.js"></script>
+
+</head>
+<body>
+    <div id="content">
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/">Pardy Stores</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/items">Inventory</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/suppliers">Suppliers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/orders">Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/predictions">Predictions</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Page Content -->
+        <div class="container mt-4">
+            <h1>Welcome to Pardy Stores Enterprises</h1>
+            <p>This site will allow you to view stock levels and create orders based on previous trends of stock.</p>
+            
+            <div class="row">
+                <!-- Total Items Displayed Card -->
+                <div class="col-md-4 mb-4">
+                    <div class="card bg-primary text-white">
+                        <div class="card-header">Total Items Displayed</div>
+                        <div class="card-body overflow-auto max-height: 300px">
+                            <h5 class="card-title">1000</h5>
+                            <p class="card-body">There are currently 1000 items in stock. Please contact a manager if there are any issues with the stock levels.</p>
+                        </div>
+                    </div>
+                </div>
+                
+            <!-- Low Stock Items Card with Scroll -->
+                <div class="col-md-4 mb-4">
+                    <div class="card bg-danger text-white h-auto">
+                        <div class="card-header">Low Stock Items</div>
+                        <div class="card-body overflow-auto" style="max-height: 229px;">
+                            <ul class="list-group list-group-flush bg-danger">
+                                <% if (lowStockItems && lowStockItems.length) { %>
+                                    <% lowStockItems.forEach(function(item) { %>
+                                        <li class="list-group-item bg-danger text-white">
+                                            <%= item.Description %> - Quantity: <%= item.Quantity %> - Location: <%= item.Country %>
+                                            <% if (userRole === 'manager') { %>
+                                                <button class="btn btn-light btn-sm" onclick="placeOrder('<%= item._id %>', '<%= item.Description %>', '<%= item.Country %>')">Place Order</button>
+                                            <% } %>
+                                        </li>
+                                    <% }); %>
+                                <% } else { %>
+                                    <li class="card-body">No items are low in stock.</li>
+                                <% } %>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                            
+                <!-- Orders Made Card Placeholder -->
+                <div class="col-md-4 mb-4">
+                    <div class="card bg-warning text-white h-100">
+                        <div class="card-header">Orders Made</div>
+                        <div class="card-body overflow-auto" style="max-height: 229px;">
+                            <ul class="list-group list-group-flush">
+                                <% if (orders && orders.length) { %>
+                                    <% orders.forEach(order => { %>
+                                        <li class="list-group-item bg-warning text-white">
+                                            <span><%= order.item %> - Quantity: <%= order.quantity %></span>
+                                        </li>
+                                    <% }); %>
+                                <% } else { %>
+                                    <p class="card-body">
+                                        No orders available
+                                    </p>
+                                <% } %>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- <div class="container mt-4">
+            <div class="row"> 
+                 Recent Activity Section 
+                <div class="col-md-6 mb-4">
+                    <div class="card text-white bg-info">
+                    <div class="card-header">Recent Activity</div>
+                    <div class="card-body">
+                        <div class="activity-feed">
+                            <div class="activity-item">
+                                <p><strong>Bruce Wayne</strong> added new items to the <em>Electronics</em> category.</p>
+                                <p class="text-muted">10 minutes ago</p>
+                            </div>
+                            <div class="activity-item">
+                                <p><strong>Peter Parker</strong> updated the stock quantity for <em>Web-Shooters</em>.</p>
+                                <p class="text-muted">30 minutes ago</p>
+                            </div>
+                            <div class="activity-item">
+                                <p><strong>Tony Stark</strong> completed a stock audit for <em>Aviation Components</em>.</p>
+                                <p class="text-muted">1 hour ago</p>
+                            </div>
+                            <div class="activity-item">
+                                <p><strong>Diana Prince</strong> created a new supplier entry for <em>Themyscira Imports</em>.</p>
+                                <p class="text-muted">2 hours ago</p>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+    <div class="footer">
+        Pardy Stores Enterprises © <%= new Date().getFullYear() %>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

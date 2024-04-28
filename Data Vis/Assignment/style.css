@@ -1,0 +1,180 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-image: url('bgimage.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+svg {
+    background-color: #fff;
+    border: 1px solid #e7e7e7;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.axis .tick text {
+    fill: #333;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #e7e7e7;
+}
+
+.text-container {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.main-title {
+    background: #f5f5f5;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.text-box {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-basis: calc(50% - 20px);
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+
+}
+
+.visualization-container {
+    display: flex;
+    align-items: stretch;
+    background: #f5f5f5;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+#parallel-coordinates, #parallel-coordinates1 {
+    flex-grow: 1;
+    margin-right: 10px; 
+    max-width: 100%;
+    flex: 1;
+}
+
+#legend-qbs, #legend-wrs {
+    flex-basis: 200px;
+    height: fit-content;
+    padding: 10px;
+    margin-left: 10px;
+    height: 100px;
+    float: right;
+}
+
+.legend rect {
+    stroke: #ccc;
+    stroke-width: 1px;
+}
+
+.legend text {
+    font-size: 12px;
+    cursor: pointer;
+}
+
+#tooltip {
+    background-color: white;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 12px;
+    color: #333;
+}
+
+#tooltip1 {
+    background-color: white;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 12px;
+    color: #333;
+}
+
+.legend rect.active, .legend text.active {
+    stroke: #000;
+    stroke-width: 2px;
+}
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+  
+.tab button {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    margin-right: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+.tab button:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.tab button.active {
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+  
+.tabcontent, #legend-container, .tab {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px 0;
+  }
+
+.tabcontent h3, .tab button {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.tabcontent {
+    display: none;
+}
+
+.tabcontent {
+    display: block;
+}
+
+a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;    
+    background-color: #4285F4;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    font-weight: bold;
+    text-align: center;
+}
+
+a:hover, a:focus {
+    background-color: #3367D6;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    color: white;
+    text-decoration: none;
+}
+
+a:active {
+    background-color: #234CA6;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}

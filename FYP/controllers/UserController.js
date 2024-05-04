@@ -1,7 +1,6 @@
 const bcrypt = require('bcrypt');
 const User = require('./models/User'); // Adjust path as necessary
 
-// Example function to create a user
 async function createUser(username, password) {
   try {
     // Generate a salt and hash the password
@@ -27,14 +26,11 @@ async function authenticateUser(username, submittedPassword) {
         const isMatch = await bcrypt.compare(submittedPassword, user.password);
         if (isMatch) {
           console.log('User authenticated successfully');
-          // Proceed with login success logic
         } else {
           console.log('Authentication failed. Passwords do not match.');
-          // Handle authentication failure
         }
       } else {
         console.log('Authentication failed. User not found.');
-        // Handle case where user is not found
       }
     } catch (error) {
       console.error('Error authenticating the user:', error.message);

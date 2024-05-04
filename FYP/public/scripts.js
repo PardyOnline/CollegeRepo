@@ -6,20 +6,6 @@ function editAllStockLevels() {
   document.getElementById('save-all').style.display = 'inline-block';
 }
 
-function saveAllStockLevels() {
-  var quantities = [];
-  document.querySelectorAll('.quantity-input').forEach(function(input) {
-    quantities.push({ id: input.id.split('-')[1], quantity: input.value });
-    input.setAttribute('readonly', true);
-  });
-  // Here you need to send `quantities` to the server to save all changes
-  console.log('Quantities to save:', quantities);
-  // You would need to implement this AJAX call.
-  
-  document.getElementById('save-all').style.display = 'none';
-  document.getElementById('edit-all').style.display = 'inline-block';
-}
-
 function submitOrder(event) {
   event.preventDefault();
   const orderData = {
@@ -40,7 +26,6 @@ function submitOrder(event) {
   .then(data => {
     console.log('Success:', data);
     $('#addOrderModal').modal('hide');
-    // Optionally, refresh the page or update the UI to show the new order
   })
   .catch((error) => {
     console.error('Error:', error);
@@ -51,7 +36,7 @@ function removeOrder(orderId) {
   if (!confirm('Are you sure you want to remove this order?')) return;
 
   fetch('/orders/' + orderId, {
-      method: 'DELETE', // Assuming your server is set up to handle DELETE requests for order removal
+      method: 'DELETE',
   })
   .then(response => response.json())
   .then(data => {

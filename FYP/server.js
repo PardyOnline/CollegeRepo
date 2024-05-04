@@ -58,7 +58,6 @@ app.get('/', requireAuth, async (req, res) => {
 app.get('/items', requireAuth, async (req, res) => {
   try {
       // Fetch only the fields necessary
-      // Inside the /items route in server.js
       const items = await Item.find({}, {
         StockCode: 1,
         Description: 1,
@@ -88,7 +87,7 @@ app.post('/signin', async (req, res) => {
     const user = await User.findOne({ email });
 
     if (!user) {
-      // If the user is not found, redirect back to the sign-in page or show an error
+      // If the user is not found, send 401 status
       return res.status(401).send('Invalid login credentials.');
     }
 
@@ -96,7 +95,7 @@ app.post('/signin', async (req, res) => {
     const isMatch = await bcrypt.compare(password, user.password);
 
     if (!isMatch) {
-      // If the password does not match, redirect back to the sign-in page or show an error
+      // If the password does not match, show 401 error
       return res.status(401).send('Invalid login credentials.');
     }
 
@@ -125,7 +124,7 @@ app.get('/orders', requireAuth, async (req, res) => {
 
 app.post('/orders', (req, res) => {
   const { item, quantity, location, status } = req.body;
-  // Add logic to insert the order into the database
+  //  Logic to insert the order into the database
   const newOrder = new Order({ item, quantity, location, status });
   newOrder.save()
     .then(() => {
@@ -192,7 +191,7 @@ app.post('/orders/confirm-delivery/:orderId', async (req, res) => {
 
 // Suppliers Route --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 app.get('/suppliers', (req, res) => {
-  // Sample list of suppliers (can be replaced with data from the database)
+  // List of suppliers 
   const suppliers = [
       { name: 'Sheehan Suppliers', location: 'France' },
       { name: 'Desmond Delivery', location: 'Australia' },

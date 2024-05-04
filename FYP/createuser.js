@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const User = require('./models/User');
 
-// Connect to MongoDB - Replace with your URI
+// Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/FYPDatabase', { useNewUrlParser: true, useUnifiedTopology: true });
 
 const createUser = async (email, plainPassword, role) => {
@@ -27,5 +27,5 @@ const createUser = async (email, plainPassword, role) => {
   }
 };
 
-// Example usage: replace with the actual details
-createUser('manager@pse.com', 'Manager2024', 'manager');
+// This needs to changed to add use details
+createUser('example@pse.com', 'password', 'role');
